@@ -1,0 +1,30 @@
+{
+  "name": "graphql-relay-js-mongoose",
+  "version": "0.0.1",
+  "description": "A library to help construct connection with edges and cursors for a graphql-js server supporting react-relay with mongoose ODM.",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint src test",
+    "build:source": "rimraf dist/ && babel src/ --out-dir dist/",
+    "build:tests": "rimraf test-dist/ && babel test/ --out-dir test-dist/",
+    "clean": "rimraf dist/ && rimraf test-dist/",
+    "build": "npm run build:source && npm run build:tests",
+    "test": "node node_modules/mocha/bin/mocha --reporter spec test-dist/*"
+  },
+  "engines": {
+    "node": ">=4.8.4"
+  },
+  "author": "Andrea Beggiato",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.7.0",
+    "rimraf": "^2.6.1"
+  }
+}
