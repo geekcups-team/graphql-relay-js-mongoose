@@ -89,11 +89,11 @@ export const connection = async (query, args, loader) => {
     .limit(limit);
 
   const firstNode = query.model.findOne().merge(clonedQuery)
-    .skip(0)
+    .skip(skip)
     .limit(1);
 
   const lastNode = query.model.findOne().merge(clonedQuery)
-    .skip(limit - 1)
+    .skip((skip + limit) - 1)
     .limit(1);
 
   const pageInfo = getPageInfo(query, totalCount, first, last, firstNode, lastNode);
