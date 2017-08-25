@@ -1,6 +1,6 @@
 {
   "name": "graphql-relay-mongoose",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A library to help construct connection with edges and cursors for a graphql-js server supporting react-relay with mongoose ODM.",
   "main": "./dist/index.js",
   "scripts": {

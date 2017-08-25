@@ -79,9 +79,13 @@ export const connection = async (query, args, loader) => {
   const totalCount = await clonedQuery.count();
 
   let skip = 0;
-  const limit = last || first;
+  let limit = last || first;
   if (last) {
     skip = totalCount > last ? totalCount - last : 0;
+  }
+
+  if ((limit + skip) > totalCount) {
+    limit = totalCount - skip;
   }
 
   const nodes = query.model.find().merge(clonedQuery)
