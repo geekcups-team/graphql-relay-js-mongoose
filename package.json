@@ -1,6 +1,6 @@
 {
   "name": "graphql-relay-mongoose",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "A library to help construct connection with edges and cursors for a graphql-js server supporting react-relay with mongoose ODM.",
   "main": "./dist/index.js",
   "scripts": {
@@ -14,6 +14,14 @@
   },
   "engines": {
     "node": ">=4.8.4"
+  },
+  "homepage": "https://github.com/geekcups-team/graphql-relay-js-mongoose",
+  "bugs": {
+    "url": "https://github.com/geekcups-team/graphql-relay-js-mongoose/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geekcups-team/graphql-relay-js-mongoose.git"
   },
   "author": "Andrea Beggiato",
   "license": "MIT",
