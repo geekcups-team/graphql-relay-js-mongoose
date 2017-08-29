@@ -88,17 +88,21 @@ export const connection = async (query, args, loader) => {
     limit = totalCount - skip;
   }
 
-  const nodes = query.model.find().merge(clonedQuery)
-    .skip(skip)
-    .limit(limit);
+  let nodes = [];
+  let firstNode = null;
+  let lastNode = null;
 
-  const firstNode = query.model.findOne().merge(clonedQuery)
-    .skip(skip)
-    .limit(1);
-
-  const lastNode = query.model.findOne().merge(clonedQuery)
-    .skip((skip + limit) - 1)
-    .limit(1);
+  if (limit > 0) {
+    nodes = query.model.find().merge(clonedQuery)
+      .skip(skip)
+      .limit(limit);
+    firstNode = query.model.findOne().merge(clonedQuery)
+      .skip(skip)
+      .limit(1);
+    lastNode = query.model.findOne().merge(clonedQuery)
+      .skip(skip + limit - 1)
+      .limit(1);
+  }
 
   const pageInfo = getPageInfo(query, totalCount, first, last, firstNode, lastNode);
 
